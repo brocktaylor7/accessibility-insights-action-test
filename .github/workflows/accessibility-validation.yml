@@ -1,4 +1,4 @@
-name: Accessibility Validation
+name: Accessibility Validation does-this-work
 
 on:
     push:
@@ -17,7 +17,7 @@ jobs:
 
             # Insert any jobs here required to build your website files
 
-            - name: Scan for accessibility issues
+            - name: Scan for accessibility issues test
               uses: microsoft/accessibility-insights-action@v2
               with:
                   repo-token: ${{ secrets.GITHUB_TOKEN }}
