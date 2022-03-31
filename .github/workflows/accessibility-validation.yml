@@ -24,6 +24,7 @@ jobs:
                   # Provide either site-dir or url
                   site-dir: ${{ github.workspace }}/public
                   # url: your-website-url
+                  scan-url-relative-path: "//"
 
             - name: Upload report artifact
               uses: actions/upload-artifact@v2
