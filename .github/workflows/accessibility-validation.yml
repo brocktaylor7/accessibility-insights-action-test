@@ -22,7 +22,7 @@ jobs:
               with:
                   repoToken: ${{ secrets.GITHUB_TOKEN }}
                   # Provide either site-dir or url
-                  staticSiteDir: ${{ github.workspace }}/public
+                  staticsitedir: ${{ github.workspace }}/public
                   # url: your-website-url
                   # scan-url-relative-path: "/"
 
