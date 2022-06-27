@@ -25,7 +25,7 @@ jobs:
                   static-site-dir: ${{ github.workspace }}/public
                   # url: your-website-url
                   # static-site-url-relative-path: "/"
-                  #   fail-on-accessibility-error: false
+                  fail-on-accessibility-error: false
 
             - name: Upload report artifact
               if: success() || failure()
