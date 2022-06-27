@@ -28,6 +28,7 @@ jobs:
                   fail-on-accessibility-error: false
 
             - name: Upload report artifact
+              if: always()
               uses: actions/upload-artifact@v2
               with:
                   name: accessibility-reports
