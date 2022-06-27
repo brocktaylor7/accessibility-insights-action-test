@@ -20,9 +20,9 @@ jobs:
             - name: Scan for accessibility issues
               uses: brocktaylor7/ai-action-gh-test@main
               with:
-                  repotoken: ${{ secrets.GITHUB_TOKEN }}
+                  repo-token: ${{ secrets.GITHUB_TOKEN }}
                   # Provide either static-site-dir or url
-                  staticsitedir: ${{ github.workspace }}/public
+                  static-site-dir: ${{ github.workspace }}/public
                   # url: your-website-url
                   # static-site-url-relative-path: "/"
 
