@@ -14,11 +14,7 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: "16"
-                  cache: "yarn"
-            - run: "yarn install --frozen-lockfile --production --ignore-optional"
+
             # Insert any jobs here required to build your website files
 
             - name: Scan for accessibility issues
