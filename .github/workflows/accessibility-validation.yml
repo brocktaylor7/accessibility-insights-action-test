@@ -28,7 +28,7 @@ jobs:
                   static-site-dir: ${{ github.workspace }}/public
                   # url: your-website-url
                   # static-site-url-relative-path: "/"
-                  baseline-file: ${{ github.workspace }}/baseline/accessibility-baseline.baseline
+                  baseline-file: ${{ github.workspace }}/baseline/test-baseline.baseline
                   fail-on-accessibility-error: false
 
             - name: Upload report artifact
