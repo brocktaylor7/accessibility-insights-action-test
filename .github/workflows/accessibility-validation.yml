@@ -20,7 +20,7 @@ jobs:
 
             # Insert any jobs here required to build your website files
 
-            - name: Scan for accessibility issues
+            - name: Scan for accessibility issues test
               uses: brocktaylor7/ai-action-gh-test@main
 
               with:
