@@ -13,20 +13,27 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 16
 
             # Insert any jobs here required to build your website files
 
-            - name: Scan for accessibility issues
-              uses: microsoft/accessibility-insights-action@v2
+            - name: Scan for accessibility issues test
+              uses: microsoft/accessibility-insights-action@v3.1.2-staging
+
               with:
-                  repo-token: ${{ secrets.GITHUB_TOKEN }}
-                  # Provide either site-dir or url
-                  site-dir: ${{ github.workspace }}/public
+                  # Provide either static-site-dir or url
+                  static-site-dir: ${{ github.workspace }}/public
                   # url: your-website-url
+                  # static-site-url-relative-path: "/"
+                  baseline-file: ${{ github.workspace }}/baseline/test-baseline.baseline
+                  fail-on-accessibility-error: true
 
             - name: Upload report artifact
-              uses: actions/upload-artifact@v2
+              if: success() || failure()
+              uses: actions/upload-artifact@v3
               with:
                   name: accessibility-reports
                   path: ${{ github.workspace }}/_accessibility-reports
